@@ -1,0 +1,44 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Authors.EditViewModel
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="~/manage/authors/edit">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <input type="hidden" name="Id" value="@Model.Id" />
+
+                <div class="form-group">
+                    <label for="AuthorStatus" class="control-label mb-1">Author Status</label>
+                    <select class="form-control" id="authorStatus" name="AuthorStatus">
+                        @{
+                            var options = Enum.GetValues(typeof(WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.AuthorStatus)).Cast<WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.AuthorStatus>();
+
+                            foreach (WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.AuthorStatus option in options)
+                            {
+                                <option value="@option">@option.ToString()</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="control-label mb-2">Name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" aria-describedby="nameHelp" value="@Model.Name" placeholder="Enter Name">
+                </div>
+             
+
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="~/manage/authors/details/@Model.Id" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

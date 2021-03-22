@@ -1,0 +1,30 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Authors.CreateViewModel
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="/manage/authors/create">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <div class="form-group">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" name="Name" placeholder="Enter a Name" />
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="~/manage/authors/index" class="btn btn-danger">Cancel</a>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Researches.EditViewModel
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="~/manage/researches/edit">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <input type="hidden" name="Id" value="@Model.Id" />
+
+                <div class="form-group">
+                    <label for="ResearchStatus" class="control-label mb-1">Research Status  </label>
+                    <select class="form-control" id="researchStatus" name="ResearchStatus">
+                        @{
+                            var options = Enum.GetValues(typeof(WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.ResearchStatus)).Cast<WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.ResearchStatus>();
+
+                            foreach (WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.ResearchStatus option in options)
+                            {
+                                <option value="@option">@option.ToString()</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Title" class="control-label mb-2">Title</label>
+                    <input type="text" class="form-control" id="Title" name="Title" aria-describedby="nameHelp" value="@Model.Title" placeholder="Enter FirstName">
+                </div>
+                <div class="form-group">
+                    <label for="Content" class="control-label mb-2">Content</label>
+                    <input type="text" class="form-control" id="Content" name="Content" aria-describedby="nameHelp" value="@Model.Content" placeholder="Enter LastName">
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="control-label mb-2">Description</label>
+                    <input type="text" class="form-control" id="Description" name="Description" aria-describedby="nameHelp" value="@Model.Description" placeholder="Enter UserName">
+                </div>
+                
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="~/manage/researches/details/@Model.Id" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Users.EditViewModel
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="~/manage/users/edit">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <input type="hidden" name="Id" value="@Model.Id" />
+
+                <div class="form-group">
+                    <label for="UserStatus" class="control-label mb-1">user Status </label>
+                    <select class="form-control" id="userStatus" name="UserStatus">
+                        @{
+                            var options = Enum.GetValues(typeof(WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.UserStatus)).Cast<WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.UserStatus>();
+
+                            foreach (WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums.UserStatus option in options)
+                            {
+                                <option value="@option">@option.ToString()</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="FirstName" class="control-label mb-2">FirstName</label>
+                    <input type="text" class="form-control" id="FirstName" name="FirstName" aria-describedby="nameHelp" value="@Model.FirstName" placeholder="Enter FirstName">
+                </div>
+                <div class="form-group">
+                    <label for="LastName" class="control-label mb-2">LastName</label>
+                    <input type="text" class="form-control" id="LastName" name="LastName" aria-describedby="nameHelp" value="@Model.LastName" placeholder="Enter LastName">
+                </div>
+                <div class="form-group">
+                    <label for="UserName" class="control-label mb-2">UserName</label>
+                    <input type="text" class="form-control" id="UserName" name="UserName" aria-describedby="nameHelp" value="@Model.UserName" placeholder="Enter UserName">
+                </div>
+                <div class="form-group">
+                    <label for="Address" class="control-label mb-2">Address</label>
+                    <input type="text" class="form-control" id="Address" name="Address" aria-describedby="nameHelp" value="@Model.Address" placeholder="Enter Address">
+                </div>
+                <div class="form-group">
+                    <label for="PhoneNumber" class="control-label mb-2">PhoneNumber</label>
+                    <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" aria-describedby="nameHelp" value="@Model.PhoneNumber" placeholder="Enter PhoneNumber">
+                </div>
+                <div class="form-group">
+                    <label for="EmailAddress" class="control-label mb-2">EmailAddress</label>
+                    <input type="email" class="form-control" id="EmailAddress" name="EmailAddress" aria-describedby="nameHelp" value="@Model.EmailAddress" placeholder="Enter EmailAddress">
+                </div>
+
+                <div class="form-group">
+                    <label for="Password" class="control-label mb-2">Password</label>
+                    <input type="password" class="form-control" id="Password" name="Password" aria-describedby="descriptionHelp" value="@Model.Password" placeholder="Enter Password">
+                </div>
+
+
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="~/manage/users/details/@Model.Id" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

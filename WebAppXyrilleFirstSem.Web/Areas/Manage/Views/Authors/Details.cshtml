@@ -1,0 +1,25 @@
+﻿@model WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.Author
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Details</h1>
+
+
+<div>
+    <h4>Name: @Model.Name</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Status
+        </dt>
+        <dd class="col-sm-10">
+            @Model.AuthorStatus
+        </dd>
+       
+    </dl>
+</div>
+<div>
+    <a href="~/manage/authors/edit/@Model.Id" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a> |
+    <a href="~/manage/authors/index" class="btn btn-danger">Back to List</a>
+</div>

@@ -1,0 +1,261 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Authors.IndexViewModel
+@using WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models
+@using WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Enums
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+
+<h1>Index</h1>
+
+
+<div class="row">
+    <div class="col-lg-5">
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Authors</span>
+            </div>
+            <select class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="searchStatus" onchange="searchTrigger()" placeholder="Author Status">
+                @{
+                    foreach (AuthorStatus authorStatus in Model.AuthorStatuses)
+                    {
+                        if (Model.AuthorStatus == authorStatus)
+                        {
+                            <option value="@authorStatus" selected>@authorStatus.ToString()</option>
+                        }
+                        else
+                        {
+                            <option value="@authorStatus">@authorStatus.ToString()</option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="col-lg-3 ">
+        <div class="input-group mt-5">
+            <input type="text" id="searchKeyword" placeholder="search research" class="form-control" aria-label="search research" aria-describedby="basic-addon2" value="@Model.Author.Keyword">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"><a href="#" onclick="searchTrigger()"><i class="fa fa-search" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="table-responsive table--no-card m-b-30 mt-md-5">
+            <a href="~/manage/authors/create" class="btn btn-lg-3 btn-success btn-block">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>Create Research</span>
+            </a>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+@if (Model.Author.Items.Count > 0)
+{
+    <table class="table table-borderless table-striped table-hover">
+        <thead>
+            <tr class="table-info">
+                <th>Name</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (Author author in Model.Author.Items)
+                {
+                    <tr>
+                        <td>@author.Name</td>
+                        <td>@author.AuthorStatus</td>
+                        <td>
+                            <a href="~/manage/authors/details/@author.Id" title="Author Details"><button type="button" class="btn"><i class="fas fa-info"></i></button></a>
+                            <a href="#" onclick="confirmDeleteAuthor('@author.Id', '@author.Name')" title="Delete Author"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
+                            @{
+                                if (author.IsPublished)
+                                {
+                                    <li class="list-inline-item"><a href="#" title="Unpublish" onclick="confirmUnpublish('@author.Id','@author.Name')"><button class="btn-danger form-control-sm"><i class="fas fa-window-close"></i></button></a></li>
+                                }
+                                else
+                                {
+                                    <li class="list-inline-item"><a href="#" title="Publish" onclick="confirmPublish('@author.Id','@author.Name')"><button class="btn-success form-control-sm"><i class="fas fa-check-square"></i></button></a></li>
+                                }
+                            }
+
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><span class="form-control-plaintext">Page&nbsp;&nbsp;&nbsp;</span></li>
+                            <li class="page-item"><input type="number" value="@Model.Author.PageIndex" class="form-control" style="width:50px;" onKeydown="javascript: if(event.keyCode == 13 && isNaN(parseInt($(this).val()))==false) window.location='/manage/authors/index?pageIndex=' + (isNaN(parseInt($(this).val())) ? 1 : parseInt($(this).val())) + '&keyword=@(Model.Author.Keyword)&status=@(Model.AuthorStatus)" /></li>
+                            <li class="page-item"><span class="form-control-plaintext">&nbsp;&nbsp;&nbsp;of @Model.Author.PageCount&nbsp;&nbsp;&nbsp;</span></li>
+                            @{
+                                var prev = Model.Author.PageIndex - 1;
+                                if (prev > 0)
+                                {
+                                    <li class="page-item"><a class="page-link" href="~/manage/authors/index?keyword=@Model.Author.Keyword&status=@Model.AuthorStatus&pageSize=@Model.Author.PageSize&pageIndex=@prev"><span aria-hidden="true">&laquo;</span></a></li>
+                                }
+                            }
+                            <li class="page-item"><a class="page-link" href="#">@(Model.Author.PageIndex)</a></li>
+                            @{
+                                var next = Model.Author.PageIndex + 1;
+                                if (next <= Model.Author.PageCount)
+                                {
+                                    <li class="page-item"><a class="page-link" href="~/manage/authors/index?keyword=@Model.Author.Keyword&status=@Model.AuthorStatus&pageSize=@Model.Author.PageSize&pageIndex=@next"><span aria-hidden="true">&raquo;</span></a></li>
+                                }
+                            }
+                        </ul>
+                    </nav>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <p>0 search results.</p>
+}
+
+<!--Model Delete-->
+<div class="modal" tabindex="-1" role="dialog" id="modal-delete-author">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Author</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="modal-delete-author-name"></span>?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="modal-delete-author-confirm"><button type="button" class="btn btn-primary">Delete Author</button></a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--MODAL Unpublish-->
+<div class="modal" tabindex="-1" role="dialog" id="modal-unpublish">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Unpublish Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to unpublish <span id="modal-unpublish-name"></span>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="modal-unpublish-button">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--MODAL Publish-->
+<div class="modal" tabindex="-1" role="dialog" id="modal-publish">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Publish Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to publish <span id="modal-publish-name"></span>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="modal-publish-button">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    ////////////////////UNPUBLISH/////////////////////////////////////////////////////////////////
+    function confirmUnpublish(id, name) {
+        $("#modal-unpublish-name").html(name);
+        $("#modal-unpublish-button").attr("onclick", "UnpublishAuthor('" + id + "')");
+        $("#modal-unpublish").modal("show");
+    }
+    function UnpublishAuthor(id) {
+        $.ajax({
+            type: "POST",
+            url: "/manage/authors/unpublish",
+            data: { id: id },
+            success: function (data) {
+                location.reload();
+            },
+            error: function (xhr) {
+                var response = JSON.parse(xhr.responseText);
+                alert("Error Occured : " + response.errors[0]);
+                location.reload();
+            }
+        });
+    }
+
+
+    //////////////////PUBLISH///////////////////////////////////////////////////////////////////////
+    function confirmPublish(id, name) {
+        $("#modal-publish-name").html(name);
+        $("#modal-publish-button").attr("onclick", "PublishAuthor('" + id + "')");
+        $("#modal-publish").modal("show");
+    }
+    function PublishAuthor(id) {
+        $.ajax({
+            type: "POST",
+            url: "/manage/authors/publish",
+            data: { id: id },
+            success: function (data) {
+                location.reload();
+            },
+            error: function (xhr) {
+                var response = JSON.parse(xhr.responseText);
+                alert("Error Occured : " + response.errors[0]);
+                location.reload();
+            }
+        });
+    }
+
+    function confirmDeleteResearch(authorId, Name) {
+        $("#modal-delete-author-name").html(Name);
+        $("#modal-delete-author-confirm").attr("href", "/manage/authors/delete/" + authorId);
+        $("#modal-delete-author").modal("show");
+    }
+
+    $("#searchKeyword").keyup(function (event) {
+        if (event.keyCode === 13) {
+            searchTrigger();
+        }
+    });
+
+    function searchTrigger() {
+        window.location = "/manage/authors/index?pageIndex=1&keyword=" + $("#searchKeyword").val() + "&status=" + $("#searchStatus").val();
+    }
+
+
+</script>

@@ -1,0 +1,63 @@
+﻿@model WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Users.CreateViewModel
+@{
+    Layout = "~/areas/manage/views/shared/_managelayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" action="/manage/users/create">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <div class="form-group">
+                    <label class="control-label">FirstName</label>
+                    <input type="text" class="form-control" name="FirstName" placeholder="Enter a FirstName" />
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">LastName</label>
+                    <input type="text" class="form-control" name="LastName" placeholder="Enter a LastName" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">UserName</label>
+                    <input type="text" class="form-control" name="UserName" placeholder="Enter a UserName" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <input type="text" class="form-control" name="Address" placeholder="Enter a Address" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">PhoneNumber</label>
+                    <input type="text" class="form-control" name="PhoneNumber" placeholder="Enter a PhoneNumber" />
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">EmailAddress</label>
+                    <input type="email" class="form-control" name="EmailAddress" placeholder="Enter a EmailAddress" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Enter a Password" />
+
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="~/manage/users/index" class="btn btn-danger">Cancel</a>
+
+
+            </form>
+        </div>
+    </div>
+</div>
