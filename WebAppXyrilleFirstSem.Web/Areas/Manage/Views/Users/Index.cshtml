@@ -77,8 +77,10 @@
                         <td>@user.UserStatus</td>
                         <td>
                             <a href="~/manage/users/details/@user.Id" title="User Details"><button type="button" class="btn"><i class="fas fa-info"></i></button></a>
-                            <a href="#" onclick="confirmDeleteUser('@user.Id', '@user.FullName')" title="Delete user"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
-                            @{
+                            <a href="~/manage/users/edit/@user.Id" title="User Update"><button type="button" class="btn"><i class="fas fa-arrow-up"></i></button></a>
+                            
+                            <a href="#" onclick="confirmDeleteUser('@user.Id', '@user.FullName')" title="User Delete"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
+                            @*@{
                                 if (user.IsPublished)
                                 {
                                     <li class="list-inline-item"><a href="#" title="Unpublish" onclick="confirmUnpublish('@user.Id','@user.FullName')"><button class="btn-danger form-control-sm"><i class="fas fa-window-close"></i></button></a></li>
@@ -87,7 +89,7 @@
                                 {
                                     <li class="list-inline-item"><a href="#" title="Publish" onclick="confirmPublish('@user.Id','@user.FullName')"><button class="btn-success form-control-sm"><i class="fas fa-check-square"></i></button></a></li>
                                 }
-                            }
+                            }*@
 
 
                         </td>

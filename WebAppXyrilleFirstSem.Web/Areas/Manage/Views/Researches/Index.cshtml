@@ -78,7 +78,7 @@
                             }
                             else
                             {
-                                @research.Title.Substring(0, 50);<span>...</span>
+                                @research.Title.Substring(0, 25);<span>...</span>
                             }
                         <td>
                             @if (research.Content.Length <= 25)
@@ -93,8 +93,10 @@
                         <td>@research.ResearchStatus</td>
                         <td>
                             <a href="~/manage/researches/details/@research.Id" title="Research Details"><button type="button" class="btn"><i class="fas fa-info"></i></button></a>
-                            <a href="#" onclick="confirmDeleteResearch('@research.Id', '@research.Title')" title="Delete Research"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
-                            @{
+                            <a href="~/manage/researches/edit/@research.Id" title="Research Update"><button type="button" class="btn"><i class="fas fa-arrow-up"></i></button></a>
+
+                            <a href="#" onclick="confirmDeleteResearch('@research.Id','@research.AuthorId', '@research.Title')" title="Delete Research"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
+                            @*@{
                                 if (research.IsPublished)
                                 {
                                     <li class="list-inline-item"><a href="#" title="Unpublish" onclick="confirmUnpublish('@research.Id','@research.Title')"><button class="btn-danger form-control-sm"><i class="fas fa-window-close"></i></button></a></li>
@@ -103,7 +105,7 @@
                                 {
                                     <li class="list-inline-item"><a href="#" title="Publish" onclick="confirmPublish('@research.Id','@research.Title')"><button class="btn-success form-control-sm"><i class="fas fa-check-square"></i></button></a></li>
                                 }
-                            }
+                            }*@
 
 
                         </td>
@@ -261,9 +263,9 @@ else
         });
     }
 
-    function confirmDeleteResearch(researchId, Name) {
+    function confirmDeleteResearch(researchId,authorId, Name) {
         $("#modal-delete-research-fullname").html(Name);
-        $("#modal-delete-research-confirm").attr("href", "/manage/researches/delete/" + researchId);
+        $("#modal-delete-research-confirm").attr("href", "/manage/researches/delete/" + researchId + "/" + authorId);
         $("#modal-delete-research").modal("show");
     }
 

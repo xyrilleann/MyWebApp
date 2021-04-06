@@ -75,15 +75,24 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                 ResearchStatus = researchStatus
             });
         }
-        [HttpGet, Route("manage/researches/delete/{researchId}")]
-        public IActionResult Delete(Guid? researchId)
+        [HttpGet, Route("manage/researches/delete/{researchId}/{authorId}")]
+        public IActionResult Delete(Guid? researchId,Guid? authorId)
         {
+            var author = this._context.Authors.FirstOrDefault(a => a.Id == authorId);
+
             var research = this._context.Researches.FirstOrDefault(s => s.Id == researchId);
 
             if (research != null)
             {
                 this._context.Researches.Remove(research);
                 this._context.SaveChanges();
+
+                if(author != null)
+                {
+                    this._context.Authors.Remove(author);
+                    this._context.SaveChanges();
+
+                }
             }
 
             return RedirectToAction("index");

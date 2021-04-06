@@ -73,8 +73,10 @@
                         <td>@author.AuthorStatus</td>
                         <td>
                             <a href="~/manage/authors/details/@author.Id" title="Author Details"><button type="button" class="btn"><i class="fas fa-info"></i></button></a>
-                            <a href="#" onclick="confirmDeleteAuthor('@author.Id', '@author.Name')" title="Delete Author"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
-                            @{
+                            <a href="~/manage/authors/edit/@author.Id" title="Author Update"><button type="button" class="btn"><i class="fas fa-arrow-up"></i></button></a>
+
+                            <a href="#" onclick="confirmDeleteAuthor('@author.Id', '@author.ResearchId', '@author.Name')" title="Author Delete"><button type="button" class="btn"><i class="fas fa-times"></i></button></a>
+                            @*@{
                                 if (author.IsPublished)
                                 {
                                     <li class="list-inline-item"><a href="#" title="Unpublish" onclick="confirmUnpublish('@author.Id','@author.Name')"><button class="btn-danger form-control-sm"><i class="fas fa-window-close"></i></button></a></li>
@@ -83,7 +85,7 @@
                                 {
                                     <li class="list-inline-item"><a href="#" title="Publish" onclick="confirmPublish('@author.Id','@author.Name')"><button class="btn-success form-control-sm"><i class="fas fa-check-square"></i></button></a></li>
                                 }
-                            }
+                            }*@
 
 
                         </td>
@@ -241,9 +243,9 @@ else
         });
     }
 
-    function confirmDeleteResearch(authorId, Name) {
+    function confirmDeleteAuthor(authorId,researchId, Name) {
         $("#modal-delete-author-name").html(Name);
-        $("#modal-delete-author-confirm").attr("href", "/manage/authors/delete/" + authorId);
+        $("#modal-delete-author-confirm").attr("href", "/manage/authors/delete/" + authorId + "/" + researchId);
         $("#modal-delete-author").modal("show");
     }
 

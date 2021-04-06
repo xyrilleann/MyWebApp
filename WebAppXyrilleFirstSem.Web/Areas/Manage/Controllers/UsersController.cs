@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Users;
 using WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Data;
@@ -41,6 +42,7 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
             }
 
             IQueryable<User> useQuery = (IQueryable<User>)this._context.Users.Where(s => s.UserStatus == userStatus);
+
 
             if (string.IsNullOrEmpty(keyword) == false)
             {
@@ -82,12 +84,15 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
         [HttpGet, Route("manage/users/delete/{userId}")]
         public IActionResult Delete(Guid? userId)
         {
-            var user = this._context.Users.FirstOrDefault(s => s.Id == userId);
+
+            var user = this._context.Users.Include(u => u.Author).FirstOrDefault(s => s.Id == userId);
 
             if (user != null)
             {
                 this._context.Users.Remove(user);
                 this._context.SaveChanges();
+                
+               
             }
 
             return RedirectToAction("index");

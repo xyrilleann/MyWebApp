@@ -34,5 +34,7 @@ namespace WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models
 
 
         public bool IsPublished { get; set; }
+
+        public Author Author { get; set; }
     }
 }

@@ -6899,11 +6899,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VGD PC 9\\source\\repos\\WebAppXyrilleFirstSem\\WebAppXyrilleFirstSem.Web\\WebAppXyrilleFirstSem.Web.csproj",
+      "projectUniqueName": "C:\\Users\\VGD PC 9\\Videos\\WEBAPPS\\GitRootXyrilleMyWebApp\\WebAppXyrilleFirstSem.Web\\WebAppXyrilleFirstSem.Web.csproj",
       "projectName": "WebAppXyrilleFirstSem.Web",
-      "projectPath": "C:\\Users\\VGD PC 9\\source\\repos\\WebAppXyrilleFirstSem\\WebAppXyrilleFirstSem.Web\\WebAppXyrilleFirstSem.Web.csproj",
+      "projectPath": "C:\\Users\\VGD PC 9\\Videos\\WEBAPPS\\GitRootXyrilleMyWebApp\\WebAppXyrilleFirstSem.Web\\WebAppXyrilleFirstSem.Web.csproj",
       "packagesPath": "C:\\Users\\VGD PC 9\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VGD PC 9\\source\\repos\\WebAppXyrilleFirstSem\\WebAppXyrilleFirstSem.Web\\obj\\",
+      "outputPath": "C:\\Users\\VGD PC 9\\Videos\\WEBAPPS\\GitRootXyrilleMyWebApp\\WebAppXyrilleFirstSem.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -12,6 +12,8 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.ViewModels.Users
     {
         public Page<User> User { get; set; }
 
+        public User NewUser { get; set; }
+
         public UserStatus UserStatus { get; set; }
 
         public List<UserStatus> UserStatuses
