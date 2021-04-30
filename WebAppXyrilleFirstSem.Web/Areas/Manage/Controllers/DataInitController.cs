@@ -36,6 +36,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -59,7 +62,10 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             Password = "123456789",
                             PhoneNumber = "123456789",
                             IsPublished = true,
-                            UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,  
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -84,6 +90,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -108,6 +117,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -132,6 +144,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -157,6 +172,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -182,6 +200,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -207,6 +228,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -232,6 +256,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -257,6 +284,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -282,6 +312,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -307,6 +340,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -332,6 +368,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -357,6 +396,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Male,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -382,6 +424,9 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
                             PhoneNumber = "123456789",
                             IsPublished = true,
                             UserStatus = Infrastructures.Domain.Enums.UserStatus.Active,
+                            LoginRetries = 0,
+                            Gender = Infrastructures.Domain.Enums.Gender.Female,
+                            LoginStatus = Infrastructures.Domain.Enums.LoginStatus.Active,
                             Address = "Dinalupihan",
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow,
@@ -390,6 +435,227 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
 
 
                         });
+            }
+            #endregion
+
+
+            #region UserRole(15 Records)
+            if (this._context.UserRoles.Count() < 1)
+            {
+
+                //1
+                this._context.UserRoles.Add(
+                        new Infrastructures.Domain.Models.UserRole()
+                        {
+
+                            Id = Guid.Parse("ddbe6a59-8faa-4c0a-85ad-20e9bcbca067"),
+                            UserId = Guid.Parse("760be32a-efa7-4609-ba67-c665b2d421a0"),
+
+                            Role = Infrastructures.Domain.Enums.Role.User,
+                            CreatedAt = DateTime.UtcNow,
+                            UpdatedAt = DateTime.UtcNow,
+
+                        });
+
+                //2
+                this._context.UserRoles.Add(
+                        new Infrastructures.Domain.Models.UserRole()
+                        {
+
+                            Id = Guid.Parse("4c596d7f-260b-4057-bd43-b97c9069c929"),
+                            UserId = Guid.Parse("045eb3d0-e601-43a6-a798-cac4b63065e0"),
+                            CreatedAt = DateTime.UtcNow,
+                            UpdatedAt = DateTime.UtcNow,
+                            Role = Infrastructures.Domain.Enums.Role.User,
+
+
+
+
+                        });
+
+                //3
+                //2
+                this._context.UserRoles.Add(
+                        new Infrastructures.Domain.Models.UserRole()
+                        {
+                            Id = Guid.Parse("50b9c48e-4ad8-4c08-b921-7f43c2157b82"),
+                            UserId = Guid.Parse("9e67a70d-8591-4905-a32f-6581674ad74f"),
+                            CreatedAt = DateTime.UtcNow,
+                            UpdatedAt = DateTime.UtcNow,
+                            Role = Infrastructures.Domain.Enums.Role.User,
+
+                        });
+
+                //4
+                this._context.UserRoles.Add(
+                         new Infrastructures.Domain.Models.UserRole()
+                         {
+
+                             Id = Guid.Parse("eae98ee4-07ca-483e-a725-55821fbd82a9"),
+                             UserId = Guid.Parse("b1dcfc79-9116-4fa7-bf1c-9056ce3afa2c"),
+                             CreatedAt = DateTime.UtcNow,
+                             UpdatedAt = DateTime.UtcNow,
+                             Role = Infrastructures.Domain.Enums.Role.User,
+
+                         });
+
+                //5
+                this._context.UserRoles.Add(
+                         new Infrastructures.Domain.Models.UserRole()
+                         {
+
+                             Id = Guid.Parse("b910ad99-616c-4d02-9af3-d9c9fb7d7c0f"),
+                             UserId = Guid.Parse("e65217b1-dfd1-4c35-a9d1-bfac7855fdb6"),
+                             CreatedAt = DateTime.UtcNow,
+                             UpdatedAt = DateTime.UtcNow,
+                             Role = Infrastructures.Domain.Enums.Role.User,
+
+                         });
+
+
+                //6
+                this._context.UserRoles.Add(
+                         new Infrastructures.Domain.Models.UserRole()
+                         {
+                             Id = Guid.Parse("eb7b5492-6f6d-41a2-858f-0f96f6d2880c"),
+                             UserId = Guid.Parse("e5daef25-c0e9-4ad3-b850-9987edd692d6"),
+                             CreatedAt = DateTime.UtcNow,
+                             UpdatedAt = DateTime.UtcNow,
+                             Role = Infrastructures.Domain.Enums.Role.User,
+
+                         });
+
+
+                //7
+                this._context.UserRoles.Add(
+                         new Infrastructures.Domain.Models.UserRole()
+                         {
+
+                         
+
+
+                             Id = Guid.Parse("ee0cc3ba-37c8-4aba-b3ba-e5c39270a9c1"),
+                             UserId = Guid.Parse("06c0c4a1-20f2-4dd0-86a4-6344f3c9a0df"),
+                             CreatedAt = DateTime.UtcNow,
+                             UpdatedAt = DateTime.UtcNow,
+                             Role = Infrastructures.Domain.Enums.Role.User,
+
+
+                         });
+
+
+                //8
+                this._context.UserRoles.Add(
+                        new Infrastructures.Domain.Models.UserRole()
+                        {
+
+    
+                            Id = Guid.Parse("417ea373-6a44-42a8-9dad-4fc8ab76ed11"),
+                            UserId = Guid.Parse("f304533c-c31a-4050-930e-bc05a1f49c6c"),
+                            CreatedAt = DateTime.UtcNow,
+                            UpdatedAt = DateTime.UtcNow,
+                            Role = Infrastructures.Domain.Enums.Role.User,
+                        });
+
+
+                //9
+                this._context.UserRoles.Add(
+                      new Infrastructures.Domain.Models.UserRole()
+                      {
+
+                         
+                          Id = Guid.Parse("2cdf8e2a-455d-443b-9bbe-1129a2842b2c"),
+                          UserId = Guid.Parse("4337265c-30c7-46e7-acce-4eb125602bfe"),
+                          CreatedAt = DateTime.UtcNow,
+                          UpdatedAt = DateTime.UtcNow,
+                          Role = Infrastructures.Domain.Enums.Role.User,
+
+
+                      });
+
+
+                //10
+                this._context.UserRoles.Add(
+                     new Infrastructures.Domain.Models.UserRole()
+                     {
+                         Id = Guid.Parse("819b71af-585e-4912-9855-c1b41d8a7152"),
+                         UserId = Guid.Parse("f5a96d61-99b3-4410-a2cd-035a70b06ad0"),
+                         CreatedAt = DateTime.UtcNow,
+                         UpdatedAt = DateTime.UtcNow,
+                         Role = Infrastructures.Domain.Enums.Role.User,
+
+                     });
+
+
+                //11
+                this._context.UserRoles.Add(
+                   new Infrastructures.Domain.Models.UserRole()
+                   {
+                       Id = Guid.Parse("710e4799-bd48-4f5f-9e3f-60d28869c3f4"),
+                       UserId = Guid.Parse("40a468e3-37f9-4921-bd27-a0e6b83d35e0"),
+                       CreatedAt = DateTime.UtcNow,
+                       UpdatedAt = DateTime.UtcNow,
+                       Role = Infrastructures.Domain.Enums.Role.User,
+
+                   });
+
+
+                //12
+                this._context.UserRoles.Add(
+                   new Infrastructures.Domain.Models.UserRole()
+                   {
+                       Id = Guid.Parse("068c3962-9d58-4619-9a06-9b620dd443ee"),
+                       UserId = Guid.Parse("46f3f0a0-9d0b-418e-a23c-205c3066fa36"),
+                       CreatedAt = DateTime.UtcNow,
+                       UpdatedAt = DateTime.UtcNow,
+                       Role = Infrastructures.Domain.Enums.Role.User,
+
+
+                   });
+
+
+                //13
+                this._context.UserRoles.Add(
+                    new Infrastructures.Domain.Models.UserRole()
+                    {
+
+                        Id = Guid.Parse("5c525682-50b6-4df5-bd9a-a6f4a416e794"),
+                        UserId = Guid.Parse("818d1f76-5917-4d5f-8c2b-9131337ac785"),
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow,
+                        Role = Infrastructures.Domain.Enums.Role.User,
+
+
+
+                    });
+
+
+                //14
+                this._context.UserRoles.Add(
+                    new Infrastructures.Domain.Models.UserRole()
+                    {
+
+                        
+                        Id = Guid.Parse("0d4a3e3b-cea2-46d0-a900-bf767c89ee34"),
+                        UserId = Guid.Parse("803c0574-0df3-481e-813f-5673f8fe5d6b"),
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow,
+                        Role = Infrastructures.Domain.Enums.Role.User,
+
+                    });
+
+
+                //15
+                this._context.UserRoles.Add(
+                    new Infrastructures.Domain.Models.UserRole()
+                    {
+
+                        Id = Guid.Parse("bd811377-4123-48c3-98e1-c5b2715a2842"),
+                        UserId = Guid.Parse("ac7883a2-4d94-450f-896a-5dd2f72061d7"),
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow,
+                        Role = Infrastructures.Domain.Enums.Role.User,
+                    });
             }
             #endregion
 

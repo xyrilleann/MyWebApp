@@ -28,10 +28,17 @@ namespace WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models
 
         public UserStatus UserStatus { get; set; }
 
+        public Role Role { get; set; }
+
+        public LoginStatus LoginStatus { get; set; }
+
+        public Gender Gender { get; set; }
+
         public string Password { get; set; }
 
         public string EmailAddress { get; set; }
 
+        public int LoginRetries { get; set; }
 
         public bool IsPublished { get; set; }
 

@@ -217,5 +217,18 @@ namespace WebAppXyrilleFirstSem.Web.Areas.Manage.Controllers
 
             return View();
         }
+
+
+        [HttpGet, Route("manage/users/logout/{userId}")]
+        public IActionResult Logout(Guid? userId)
+        {
+            var user = this._context.Users.FirstOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                WebUser.UserId = null;
+                WebUser.UserName = null;
+            }
+            return Redirect("~/home/index");
+        }
     }
 }

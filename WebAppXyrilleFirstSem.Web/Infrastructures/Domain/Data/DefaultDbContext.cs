@@ -15,11 +15,13 @@ namespace WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Research> Researches { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Author>().ToTable("Author");
+            modelBuilder.Entity<Author>().ToTable("UserRole");
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Research>().ToTable("Research");
            

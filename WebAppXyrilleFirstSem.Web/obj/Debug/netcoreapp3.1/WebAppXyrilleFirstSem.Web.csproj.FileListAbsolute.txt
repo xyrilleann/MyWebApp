@@ -830,3 +830,5 @@ C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.We
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.csproj.CopyComplete
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.dll
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.pdb
+C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Register.cshtml.g.cs
+C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Accounts\Login.cshtml.g.cs

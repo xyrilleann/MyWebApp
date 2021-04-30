@@ -9,7 +9,7 @@ using WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Data;
 namespace WebAppXyrilleFirstSem.Web.Migrations
 {
     [DbContext(typeof(DefaultDbContext))]
-    [Migration("20210318074604_init")]
+    [Migration("20210430065052_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,9 +48,10 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.ToTable("Author");
+                    b.ToTable("UserRole");
                 });
 
             modelBuilder.Entity("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.Research", b =>
@@ -111,17 +112,29 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsPublished")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("LoginRetries")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LoginStatus")
+                        .HasColumnType("int");
+
                     b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -137,11 +150,34 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.UserRole", b =>
+                {
+                    b.Property<Guid?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRoles");
+                });
+
             modelBuilder.Entity("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.Author", b =>
                 {
                     b.HasOne("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithOne("Author")
+                        .HasForeignKey("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.Author", "UserId");
                 });
 
             modelBuilder.Entity("WebAppXyrilleFirstSem.Web.Infrastructures.Domain.Models.Research", b =>

@@ -21,8 +21,12 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                     Address = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     UserStatus = table.Column<int>(nullable: false),
+                    Role = table.Column<int>(nullable: false),
+                    LoginStatus = table.Column<int>(nullable: false),
+                    Gender = table.Column<int>(nullable: false),
                     Password = table.Column<string>(nullable: true),
                     EmailAddress = table.Column<string>(nullable: true),
+                    LoginRetries = table.Column<int>(nullable: false),
                     IsPublished = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -31,7 +35,22 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Author",
+                name: "UserRoles",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    UpdatedAt = table.Column<DateTime>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: true),
+                    Role = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRoles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserRole",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -45,9 +64,9 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Author", x => x.Id);
+                    table.PrimaryKey("PK_UserRole", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Author_User_UserId",
+                        name: "FK_UserRole_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
@@ -72,22 +91,23 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                 {
                     table.PrimaryKey("PK_Research", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Research_Author_AuthorId",
+                        name: "FK_Research_UserRole_AuthorId",
                         column: x => x.AuthorId,
-                        principalTable: "Author",
+                        principalTable: "UserRole",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Author_UserId",
-                table: "Author",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Research_AuthorId",
                 table: "Research",
                 column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserRole_UserId",
+                table: "UserRole",
+                column: "UserId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -96,7 +116,10 @@ namespace WebAppXyrilleFirstSem.Web.Migrations
                 name: "Research");
 
             migrationBuilder.DropTable(
-                name: "Author");
+                name: "UserRoles");
+
+            migrationBuilder.DropTable(
+                name: "UserRole");
 
             migrationBuilder.DropTable(
                 name: "User");
