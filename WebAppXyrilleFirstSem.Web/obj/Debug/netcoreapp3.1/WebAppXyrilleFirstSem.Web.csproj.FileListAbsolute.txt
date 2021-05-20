@@ -795,8 +795,6 @@ C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.We
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.csprojAssemblyReference.cache
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\staticwebassets\WebAppXyrilleFirstSem.Web.StaticWebAssets.Manifest.cache
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\staticwebassets\WebAppXyrilleFirstSem.Web.StaticWebAssets.xml
-C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.RazorAssemblyInfo.cache
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.RazorAssemblyInfo.cs
 C:\Users\VGD PC 9\Videos\WEBAPPS\GitRootXyrilleMyWebApp\WebAppXyrilleFirstSem.Web\obj\Debug\netcoreapp3.1\WebAppXyrilleFirstSem.Web.AssemblyInfoInputs.cache
